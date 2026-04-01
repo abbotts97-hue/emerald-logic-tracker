@@ -1,0 +1,317 @@
+{
+  "lastUpdated": "2026-04-01",
+  "groups": [
+    {
+      "name": "Emerald Logic Network",
+      "columns": {
+        "seo": "SEO",
+        "schema": "Schema",
+        "policies": "Policies",
+        "agreements": "Agreements",
+        "forms": "Forms",
+        "xeroLinked": "Xero Linked",
+        "driverFlyer": "Driver Flyer",
+        "creditsEmeraldLogic": "Emerald Logic Page",
+        "creditsDominate": "Dominate Page",
+        "creditsTaxiMarketing": "Taxi Marketing Page",
+        "deployed": "Deployed"
+      }
+    }
+  ],
+  "clients": [
+    {
+      "name": "Copper Systems",
+      "domain": "coppersystems.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "Take Me Connect",
+      "domain": "takemeconnect.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "Dafox",
+      "domain": "dafox.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "Cabscanner",
+      "domain": "cabscanner.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "ACDSI",
+      "domain": "ac-dsi.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "ARE Dispatch",
+      "domain": "are-dispatch.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "Nearby DSI",
+      "domain": "nearbydsi.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "Ride",
+      "domain": "ridetech.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "247 Taxis",
+      "domain": "247airporttransfertech.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "Whiterose",
+      "domain": "whiterosetech.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "Glenfold",
+      "domain": "glenfold.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "Portal",
+      "domain": "portaldata.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "Sanbal",
+      "domain": "sanbal.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    },
+    {
+      "name": "SBAC",
+      "domain": "sbac.ie",
+      "group": "Emerald Logic Network",
+      "status": "pending",
+      "departed": false,
+      "requirements": {
+        "seo": false,
+        "schema": false,
+        "policies": false,
+        "agreements": false,
+        "forms": false,
+        "xeroLinked": false,
+        "driverFlyer": false,
+        "creditsDominate": false,
+        "creditsTaxiMarketing": false,
+        "deployed": false,
+        "creditsEmeraldLogic": false
+      },
+      "notes": ""
+    }
+  ]
+}

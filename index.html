@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emerald Logic Tracker</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0d0d0d;
+    color: #e0e0e0;
+    padding: 2rem 2.5rem;
+    min-height: 100vh;
+  }
+
+  .header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .updated {
+    font-size: 12px;
+    color: #555;
+  }
+
+  .stats-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-card {
+    background: #141414;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    padding: 0.85rem 1.25rem;
+    min-width: 120px;
+  }
+
+  .stat-card .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .stat-card .label {
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  .stat-card .value.green { color: #4ade80; }
+  .stat-card .value.amber { color: #facc15; }
+
+  .group-header {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 14px 0 8px;
+    margin-top: 2rem;
+  }
+
+  .group-header:first-of-type {
+    margin-top: 0;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  th {
+    text-align: center;
+    padding: 10px 12px;
+    background: #0d0d0d;
+    border-bottom: 1px solid #1e1e1e;
+    color: #555;
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  th:first-child,
+  th:nth-child(2),
+  th:last-child {
+    text-align: left;
+  }
+
+  td {
+    padding: 12px 12px;
+    border-bottom: 1px solid #161616;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  td:first-child,
+  td:nth-child(2),
+  td:last-child {
+    text-align: left;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: #161616;
+  }
+
+  .client-name {
+    font-weight: 600;
+    color: #fff;
+    font-size: 13px;
+  }
+
+  .domain {
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .domain:hover {
+    text-decoration: underline;
+  }
+
+  .temp-url {
+    color: #a78bfa;
+    text-decoration: none;
+    font-size: 11px;
+    opacity: 0.7;
+  }
+
+  .temp-url:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+
+  .domain-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 12px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+
+  .badge.live {
+    background: #14532d;
+    color: #4ade80;
+  }
+
+  .badge.dev {
+    background: #713f12;
+    color: #facc15;
+  }
+
+  .badge.pending {
+    background: #27272a;
+    color: #71717a;
+  }
+
+  .badge.departed {
+    background: #1c1c1c;
+    color: #555;
+    text-decoration: line-through;
+    text-decoration-color: #555;
+  }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .icon.yes {
+    background: rgba(74, 222, 128, 0.12);
+    color: #4ade80;
+  }
+
+  .icon.no {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+  }
+
+  .icon.na {
+    color: #333;
+    background: none;
+    font-size: 10px;
+  }
+
+  .notes-cell {
+    color: #666;
+    font-size: 12px;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  tr.departed td {
+    opacity: 0.35;
+    text-decoration: line-through;
+    text-decoration-color: #555;
+  }
+
+  tr.departed td .icon,
+  tr.departed td .badge {
+    text-decoration: none;
+  }
+
+  tr.departed .departed-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #555;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin-left: 6px;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+
+  .error {
+    color: #ef4444;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    body { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Emerald Logic Tracker</h1>
+  <span class="updated" id="lastUpdated"></span>
+</div>
+
+<div class="stats-bar" id="statsBar"></div>
+
+<div id="content"></div>
+
+<script>
+function checkIcon(val) {
+  if (val === true) return '<span class="icon yes">&#10003;</span>';
+  if (val === false) return '<span class="icon no">&#10005;</span>';
+  return '<span class="icon na">&mdash;</span>';
+}
+
+function statusBadge(status) {
+  var cls = status === 'live' ? 'live' : status === 'dev' ? 'dev' : status === 'departed' ? 'departed' : 'pending';
+  return '<span class="badge ' + cls + '">' + status + '</span>';
+}
+
+function renderStats(clients) {
+  var active = clients.filter(function(c) { return !c.departed; });
+  var total = active.length;
+  var liveCount = active.filter(function(c) { return c.status === 'live'; }).length;
+  var pctColor = '#71717a';
+
+  document.getElementById('statsBar').innerHTML =
+    '<div class="stat-card"><div class="value">' + clients.length + '</div><div class="label">Total Sites</div></div>' +
+    '<div class="stat-card"><div class="value green">' + liveCount + '</div><div class="label">Live</div></div>' +
+    '<div class="stat-card"><div class="value amber">' + (total - liveCount) + '</div><div class="label">In Progress</div></div>';
+}
+
+function renderTable(clients, group) {
+  var grouped = clients.filter(function(c) { return c.group === group.name; });
+  var columns = group.columns || {};
+  var colKeys = Object.keys(columns);
+
+  var html = '<div class="group-header">' + group.name + '</div>';
+
+  if (!grouped.length) {
+    html += '<div class="table-wrap" style="padding: 1.5rem 1rem; text-align: center; color: #444; font-size: 13px;">No sites added yet</div>';
+    return html;
+  }
+
+  html += '<div class="table-wrap"><table>';
+  html += '<thead><tr>';
+  html += '<th>Client</th><th>Domain</th><th>Status</th>';
+  colKeys.forEach(function(k) { html += '<th>' + columns[k] + '</th>'; });
+  html += '<th>Notes</th>';
+  html += '</tr></thead><tbody>';
+
+  grouped.forEach(function(client) {
+    var isDeparted = client.departed === true;
+    html += '<tr' + (isDeparted ? ' class="departed"' : '') + '>';
+    html += '<td class="client-name">' + client.name + (isDeparted ? '<span class="departed-tag">No longer with us</span>' : '') + '</td>';
+    var domainHtml = '<div class="domain-cell">';
+    if (client.domain) {
+      domainHtml += '<a class="domain" href="https://www.' + client.domain + '" target="_blank">' + client.domain + '</a>';
+    } else {
+      domainHtml += '<span style="color:#333;font-size:12px">TBC</span>';
+    }
+    if (client.tempUrl) {
+      domainHtml += '<a class="temp-url" href="' + client.tempUrl + '" target="_blank">&#8599; ' + client.tempUrl.replace('https://', '') + '</a>';
+    }
+    domainHtml += '</div>';
+    html += '<td>' + domainHtml + '</td>';
+    html += '<td>' + statusBadge(isDeparted ? 'departed' : client.status) + '</td>';
+    colKeys.forEach(function(k) { html += '<td>' + checkIcon(client.requirements[k]) + '</td>'; });
+    html += '<td class="notes-cell">' + (client.notes || '') + '</td>';
+    html += '</tr>';
+  });
+
+  html += '</tbody></table></div>';
+  return html;
+}
+
+async function init() {
+  try {
+    var resp = await fetch('client-tracker-data.json');
+    if (!resp.ok) throw new Error('Could not load tracker data');
+    var data = await resp.json();
+
+    document.getElementById('lastUpdated').textContent = 'Last updated: ' + data.lastUpdated;
+    renderStats(data.clients);
+
+    var groups = data.groups || [{ name: 'All', columns: {} }];
+    var contentEl = document.getElementById('content');
+    var html = '';
+    groups.forEach(function(g) { html += renderTable(data.clients, g); });
+
+    contentEl.innerHTML = html;
+  } catch (err) {
+    document.getElementById('content').innerHTML = '<p class="error">Error: ' + err.message + '</p>';
+  }
+}
+
+init();
+</script>
+</body>
+</html>
