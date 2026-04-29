@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-01",
+  "lastUpdated": "2026-04-29",
   "groups": [
     {
       "name": "Emerald Logic Network",
@@ -126,7 +126,7 @@
     },
     {
       "name": "ARE Dispatch",
-      "domain": "are-dispatch.ie",
+      "domain": "aredispatch.ie",
       "group": "Emerald Logic Network",
       "status": "pending",
       "departed": false,
@@ -293,10 +293,11 @@
       "notes": ""
     },
     {
-      "name": "SBAC",
-      "domain": "sbac.ie",
+      "name": "Solvatrip",
+      "domain": "solvatrip.ie",
+      "tempUrl": "https://solvatrip-site.vercel.app",
       "group": "Emerald Logic Network",
-      "status": "pending",
+      "status": "dev",
       "departed": false,
       "requirements": {
         "seo": false,
@@ -306,12 +307,12 @@
         "forms": false,
         "xeroLinked": false,
         "driverFlyer": false,
-        "creditsDominate": false,
-        "creditsTaxiMarketing": false,
-        "deployed": false,
-        "creditsEmeraldLogic": false
+        "creditsEmeraldLogic": true,
+        "creditsDominate": true,
+        "creditsTaxiMarketing": true,
+        "deployed": false
       },
-      "notes": ""
+      "notes": "Rebranded from SBAC DSI Limited → Solvatrip Ltd (9 Apr 2026). First Emerald Logic Network site. 10 AI-generated branded images (gold/navy). 4 credits pages live. Domain solvatrip.ie needs pointing to Vercel."
     }
   ]
 }
