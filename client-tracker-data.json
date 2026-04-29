@@ -22,23 +22,24 @@
     {
       "name": "Copper Systems",
       "domain": "coppersystems.ie",
+      "tempUrl": "https://coppersystems-site.vercel.app",
       "group": "Emerald Logic Network",
-      "status": "pending",
+      "status": "dev",
       "departed": false,
       "requirements": {
-        "seo": false,
+        "seo": true,
         "schema": false,
         "policies": false,
         "agreements": false,
         "forms": false,
         "xeroLinked": false,
         "driverFlyer": false,
-        "creditsDominate": false,
-        "creditsTaxiMarketing": false,
-        "deployed": false,
-        "creditsEmeraldLogic": false
+        "creditsEmeraldLogic": true,
+        "creditsDominate": true,
+        "creditsTaxiMarketing": true,
+        "deployed": false
       },
-      "notes": ""
+      "notes": "Built in a prior session (not logged at the time). Next.js 16.1.6 + Tailwind v4. Copper/charcoal palette, Manrope font, dark theme. Pages: home (8 sections), services overview + 5 service detail (operators, drivers, settlements, compliance, technology), about, how-it-works, contact, 4 credits (emerald-logic, taxi-marketing, denton-dynamics, dominate-media), 404. Logo swapped 29 Apr 2026 to real client artwork (white BG stripped to transparent via sharp alpha threshold). All hero/service images already in place as WebP + SVG fallback. SEO metadata across all pages. Schema markup not yet added (TODO). GitHub repo not initialised yet — needs to be set up. Local at C:\\Users\\Levi\\Projects\\coppersystems-site. Awaiting: schema markup, GitHub init + push, production domain pointing."
     },
     {
       "name": "Take Me Connect",
