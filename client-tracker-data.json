@@ -189,27 +189,6 @@
       "notes": ""
     },
     {
-      "name": "247 Taxis",
-      "domain": "247airporttransfertech.ie",
-      "group": "Emerald Logic Network",
-      "status": "pending",
-      "departed": false,
-      "requirements": {
-        "seo": false,
-        "schema": false,
-        "policies": false,
-        "agreements": false,
-        "forms": false,
-        "xeroLinked": false,
-        "driverFlyer": false,
-        "creditsDominate": false,
-        "creditsTaxiMarketing": false,
-        "deployed": false,
-        "creditsEmeraldLogic": false
-      },
-      "notes": ""
-    },
-    {
       "name": "Whiterose",
       "domain": "whiterosetech.ie",
       "group": "Emerald Logic Network",
